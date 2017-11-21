@@ -1,0 +1,62 @@
+<div class="row" ng-init="getEstados();getLibros('5a1395a9bc850e5b945072e3');">
+    <div class="col s12 m6 l6" ng-repeat="libro in libros | startFrom:(currentPage - 1) * pageSize | limitTo:pageSize">
+        <div class="card medium horizontal">
+          <div class="card-image">
+            <!-- imagen del libro -->
+            <img class="responsive-img" style="width: 300px; height: 400px;" ng-src="{{libro.img}}">
+          </div>
+
+          <div class="card-stacked">
+            <!-- contenido del card -->
+            <div class="card-content">
+
+              <!-- Titulo del libro -->
+              <p style="font-weight: bold; font-size: 17px;">{{libro.title}}</p>
+
+              <!-- Autor del libro -->
+              <p style="font-size: 14px;">{{libro.autor}}</p>
+
+              <!-- Genero del libro -->
+              <p style="font-size: 12px;">{{libro.genero}}</p>
+
+              <!-- Directiva rating stars -->
+              <jk-rating-stars rating="RatingLibro[$index]" id="'{{libro.id}}'" max-rating="10" on-rating="onItemRating(rating,libro.id)"></jk-rating-stars>
+
+              <!-- Rating general -->
+              <p style="font-size: 14px;">Calificación general: {{libro.rating_general}}</p>
+
+              <!-- Estado del libro -->
+              <select ng-model="EstadoLibro[$index]" id="{{$index}}"  ng-change="updateEstado('{{$index}}','{{libro.id}}');" material-select watch>
+                <option value="" disabled selected>Choose your option</option>
+                <option ng-repeat=" item in estados | filter: myFilter" value="{{item.id}}">{{item.nombre}}</option>
+              </select>
+
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- Paginación -->
+<pagination
+              class="center"
+              id="pagination"
+              page="currentPage"
+              page-size="pageSize"
+              total="libros.length"
+              show-prev-next="true"
+              use-simple-prev-next="false"
+              dots="...."
+              hide-if-empty="false"
+              adjacent="2"
+              scroll-top="false"
+              pagination-action="changePage(page)" />
+
+<script type="text/javascript">
+
+    // Inicializando el material select
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+</script>
+

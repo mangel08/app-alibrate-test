@@ -1,0 +1,25 @@
+<nav class="nav-extended blue-grey" ng-init="getEstados(); ">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">ALIBRATE</a>
+      <a ng-click="openSideNav();" data-activates="mobile-demo" class="button-collapse cursor"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" ng-repeat="estado in estados">
+         <li><a ng-click="getLibros(estado.id,false)">{{estado.nombre}}</a></li>
+      </ul >
+      <ul class="side-nav" id="mobile-demo">
+        <li><a ng-click="getLibros(estados[0].id, true)">{{estados[0].nombre}}</a></li>
+        <li><a ng-click="getLibros(estados[1].id, true)">{{estados[1].nombre}}</a></li>
+        <li><a ng-click="getLibros(estados[2].id, true)">{{estados[2].nombre}}</a></li>
+        <li><a ng-click="getLibros(estados[3].id, true)">{{estados[3].nombre}}</a></li>
+        <li><a ng-click="getLibros(estados[4].id, true)">{{estados[4].nombre}}</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<script type="text/javascript">
+  // Inicialización del sideNav
+  $( document ).ready(function(){
+    setTimeout(function() {
+      $(".button-collapse").sideNav();
+    }, 5000);
+  })
+</script>

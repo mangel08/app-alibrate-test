@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>ALIBRATE</title>
+    
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/materialize/css/materialize.min.css">
+  	<link rel="stylesheet" type="text/css" href="assets/plugins/jk-rating-stars/jk-rating-stars.min.css">
+
+  </head>
+
+<!-- BODY -->
+<body ng-app="app">
+
+<!-- CONTENIDO -->
+<header>
+   <div data-ng-include src="'app/tpl/header.html'" data-ng-controller="HomeController"></div>
+</header>
+
+<!-- CONTENIDO -->
+<div ng-view>
+    
+</div> 
+<!-- END CONTENIDO -->
+
+</body>
+<!-- END BODY -->
+
+<!-- SCRIPTS JS -->
+
+<!-- JQUERY -->
+<script type="text/javascript" src="assets/plugins/jquery/jquery-3.2.0.js"></script>
+
+<!-- ANGULAR CORE PLUGINS  -->
+<script type="text/javascript" src="assets/plugins/angular/angular.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-resource.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-local-storage.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-animate.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-touch.min.js"></script>
+<script type="text/javascript" src="assets/plugins/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+<!-- MATERIALIZE -->
+<script type="text/javascript" src="assets/plugins/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="assets/plugins/materialize/js/angular-materialize.min.js"></script>
+
+<!-- PLUGINS -->
+<script type="text/javascript" src="assets/plugins/jk-rating-stars/jk-rating-stars.min.js"></script>
+
+<!-- _____________________________CONFIG ANGULAR___________________________________________ -->
+<script type="text/javascript" src="app/js/main.js"></script>
+<script type="text/javascript" src="app/js/services/ServicesCtrl.js"></script>
+<script type="text/javascript" src="app/js/filters/filters.js"></script>
+
+<!-- CONTROLLERS -->
+<script type="text/javascript" src="app/js/controllers/HomeController.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+  });
+</script>
+
+</html>
