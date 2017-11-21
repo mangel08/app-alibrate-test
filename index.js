@@ -10,7 +10,8 @@ const app = require('./app.js');
 const properties = require('./app/config/properties.js');
 const MongoClient = require('mongodb').MongoClient;
 
-mongoose.connect(properties.db, {}, (err,res) => {
+mongoose.connect(properties.db, {useMongoClient: true, user: properties.user_db,
+  pass: properties.user_pass}, (err,res) => {
 	if(err){
 		throw err;
 	}else{
