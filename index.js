@@ -8,7 +8,6 @@
 const mongoose = require('mongoose');
 const app = require('./app.js');
 const properties = require('./app/config/properties.js');
-const MongoClient = require('mongodb').MongoClient;
 
 mongoose.connect(properties.db, {useMongoClient: true, user: properties.user_db,
   pass: properties.user_pass}, (err,res) => {
@@ -16,7 +15,6 @@ mongoose.connect(properties.db, {useMongoClient: true, user: properties.user_db,
 		throw err;
 	}else{
 		app.listen(properties.port, () => {
-			//Comilla Invertida (`) Permite recibir Variables
 			console.log(`API Funcionando en http://localhost:${properties.port}`);
 			console.log("Conección a mongodb correcta");
 		});

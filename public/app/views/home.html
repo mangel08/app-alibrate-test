@@ -1,3 +1,9 @@
+<div class="row">
+  <div class="col s12 m12 l12">
+    <h5>{{count}}</h5>
+  </div>
+</div>
+
 <div class="row" ng-init="getEstados();getLibros('5a1395a9bc850e5b945072e3');">
     <div class="col s12 m6 l6" ng-repeat="libro in libros | startFrom:(currentPage - 1) * pageSize | limitTo:pageSize">
         <div class="card medium horizontal">

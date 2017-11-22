@@ -6,6 +6,7 @@ app.controller("HomeController", function($scope, $rootScope, service){
     $rootScope.libros = []
     $rootScope.open = true;
 
+
     // Variables para los ng-model dinamicos
     $scope.EstadoLibro = []; //Estado
     $scope.RatingLibro = []; //Rating
@@ -33,7 +34,12 @@ app.controller("HomeController", function($scope, $rootScope, service){
 
 			var libro = response.data.libro;
 			$rootScope.libros = [];
-			$scope.count = libro.length;
+
+			if(libro.length > 1){
+				$scope.count = libro.length+" libros";
+			}else{
+				$scope.count = libro.length+" libro";
+			}
 			
 			for (var i = 0, l = libro.length; i < l; i++) {
 				var obj = {};
