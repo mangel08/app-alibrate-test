@@ -6,7 +6,7 @@
 
 <div class="row" ng-init="getEstados();getLibros('5a1395a9bc850e5b945072e3');">
     <div class="col s12 m6 l6" ng-repeat="libro in libros | startFrom:(currentPage - 1) * pageSize | limitTo:pageSize">
-        <div class="card medium horizontal">
+        <div class="card medium horizontal hoverable">
           <div class="card-image">
             <!-- imagen del libro -->
             <img class="responsive-img" style="width: 300px; height: 400px;" ng-src="{{libro.img}}">
